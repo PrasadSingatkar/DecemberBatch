@@ -1,0 +1,30 @@
+Write a program to declare variables for storing your name, age, grade, and whether you are a student. Print these values.
+Create a program that calculates the area of a rectangle. Take length and breadth as variables.
+
+Write a program to calculate the sum, difference, product, quotient, and remainder of two numbers.
+
+Write a program to check if a given number is greater than, less than, or equal to another number.
+
+Create a program to check if a person is eligible to vote (age >= 18 and has a voter ID).
+
+Write a program that takes the radius of a circle as input and calculates both its area and circumference using variables and arithmetic operators.
+
+Create a program that accepts the marks of three subjects as input and checks if the student has passed (marks in all subjects >= 40 and average >= 50).
+
+(Read About Scanner Class)*
+
+Write a program to check if a number is even or odd using an if statement.
+if-else Statement
+
+Write a program to determine if a number is positive, negative, or zero using an if-else statement.
+
+Create a program that takes a person's age and prints their life stage:
+Age < 13: "Child"
+Age 13-19: "Teenager"
+Age 20-59: "Adult"
+Age >= 60: "Senior Citizen"
+
+Write a program to check if a number is divisible by both 5 and 3.
+
+Create a program that asks the user to input a year and checks if it is a leap year:
+A year is a leap year if it is divisible by 4 but not divisible by 100, except if it is divisible by 400.
