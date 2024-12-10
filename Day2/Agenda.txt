@@ -1,0 +1,6 @@
+Agenda
+- Adding Envrionment Variables
+- IntelliJ
+- Variables & Datatypes
+- Operators
+- Control Statements(if statement, if-else statement, if-else-if ladder)
