@@ -1,0 +1,8 @@
+Agenda- 
+
+~ Doubt -  Create a Person class with basic details like name and age. Then, create two subclasses: Student and Teacher. Both should inherit from Person and add specific attributes (e.g., grade for Student and subject for Teacher). Write a program to display details of a Student and a Teacher, showing inheritance in action.
+
+~ Abstraction & Encapsulation
+~ Abstract Classes 
+~ Interfaces 
+
