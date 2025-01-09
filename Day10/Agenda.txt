@@ -1,0 +1,12 @@
+Agenda: 
+
+# Create a Java program that initializes an array with 3 elements and attempts to print the element at the 3rd index. Write the code and explain what happens when the program is executed. 
+Why does this result in an exception? 
+Which type of exception is thrown? 
+How can it be handled?
+
+
+- TRY-CATCH
+- THROW
+- THROWS
+- CUSTOM EXCEPTION
