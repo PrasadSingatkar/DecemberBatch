@@ -1,0 +1,22 @@
+Agenda:
+- Problem Solving
+- Database
+
+
+Step 1-
+https://dev.mysql.com/downloads/mysql/
+
+Windows (x86, 64-bit), MSI Installer	9.1.0	118.1M	
+Download this and install
+
+If giving error of visual studio 2019 x64 redistributable
+https://aka.ms/vs/17/release/vc_redist.x64.exe
+Download and install above and again install MySQL Community Server
+---------------------------------------------------------------------------------------------------------------------------
+
+Step 2-
+https://dev.mysql.com/downloads/workbench/
+
+Windows (x86, 64-bit), MSI Installer	8.0.40	41.9M
+Download this and install
+---------------------------------------------------------------------------------------------------------------------------

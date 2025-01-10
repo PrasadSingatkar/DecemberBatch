@@ -1,0 +1,83 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 40
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE decemberbatch;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> show databases;
++------------------------+
+| Database               |
++------------------------+
+| decemberbatch          |
+| employee_management_db |
+| hospital               |
+| information_schema     |
+| mall                   |
+| mysql                  |
+| performance_schema     |
+| practice               |
+| sakila                 |
+| school                 |
+| student_db             |
+| student_tracker        |
+| sys                    |
+| world                  |
++------------------------+
+14 rows in set (0.00 sec)
+
+mysql> show tables;
+ERROR 1046 (3D000): No database selected
+mysql> use decemberbatch;
+Database changed
+mysql> show tables;
+Empty set (0.00 sec)
+
+mysql> CREATE TABLE EMP (
+    -> EMPNO INT(4) NOT NULL PRIMARY KEY,
+    ->     ENAME VARCHAR(20),
+    -> SAL DECIMAL(7,2)
+    -> DEPTNO INT(4)
+    -> );
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DEPTNO INT(4)
+)' at line 5
+mysql> CREATE TABLE EMP (
+    -> EMPNO INT(4) NOT NULL PRIMARY KEY,
+    ->     ENAME VARCHAR(20),
+    -> SAL DECIMAL(7,2),
+    -> DEPTNO INT(4)
+    -> );
+Query OK, 0 rows affected, 2 warnings (0.06 sec)
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_decemberbatch |
++-------------------------+
+| emp                     |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT  * FROM EMP;
+Empty set (0.01 sec)
+
+mysql> INSERT INTO EMP VALUES (1234,'kRISHNA',1000,10);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT  * FROM EMP;
++-------+---------+---------+--------+
+| EMPNO | ENAME   | SAL     | DEPTNO |
++-------+---------+---------+--------+
+|  1234 | kRISHNA | 1000.00 |     10 |
++-------+---------+---------+--------+
+1 row in set (0.01 sec)
+
+mysql>
