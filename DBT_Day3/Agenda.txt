@@ -1,0 +1,8 @@
+ACID Properties*
+SQL datatypes
+Types of SQL Commands
+Constraints
+SELECT Command
+Operators
+Creating database -> table -> inserting values in table
+Where clause
