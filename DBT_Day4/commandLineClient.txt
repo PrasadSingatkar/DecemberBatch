@@ -1,0 +1,373 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use flynaut;
+Database changed
+mysql> select * from emp;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT ename, hiredate
+    -> FROM EMP
+    -> WHERE HIREDATE BETWEEN '1981-04-01' AND '1981-05-01';
++-------+------------+
+| ename | hiredate   |
++-------+------------+
+| JONES | 1981-04-02 |
+| BLAKE | 1981-05-01 |
++-------+------------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT ENAME, JOB
+    -> FROM EMP
+    -> WHERE JOB='MANAGER' OR JOB = 'CLERK';
++--------+---------+
+| ENAME  | JOB     |
++--------+---------+
+| SMITH  | CLERK   |
+| JONES  | MANAGER |
+| BLAKE  | MANAGER |
+| CLARK  | MANAGER |
+| ADAMS  | CLERK   |
+| JAMES  | CLERK   |
+| MILLER | CLERK   |
++--------+---------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT ENAME, JOB
+    -> FROM EMP
+    -> WHERE JOB IN ('MANAGER','CLERK');
++--------+---------+
+| ENAME  | JOB     |
++--------+---------+
+| SMITH  | CLERK   |
+| JONES  | MANAGER |
+| BLAKE  | MANAGER |
+| CLARK  | MANAGER |
+| ADAMS  | CLERK   |
+| JAMES  | CLERK   |
+| MILLER | CLERK   |
++--------+---------+
+7 rows in set (0.00 sec)
+
+mysql> SELECT ename, comm
+    -> From emp
+    -> Where comm is null;
++--------+------+
+| ename  | comm |
++--------+------+
+| SMITH  | NULL |
+| JONES  | NULL |
+| BLAKE  | NULL |
+| CLARK  | NULL |
+| SCOTT  | NULL |
+| KING   | NULL |
+| ADAMS  | NULL |
+| JAMES  | NULL |
+| FORD   | NULL |
+| MILLER | NULL |
++--------+------+
+10 rows in set (0.00 sec)
+
+mysql> SELECT ENAME, SAL
+    -> FROM EMP
+    -> WHERE COMM IS NOT NULL;
++--------+---------+
+| ENAME  | SAL     |
++--------+---------+
+| ALLEN  | 1600.00 |
+| WARD   | 1250.00 |
+| MARTIN | 1250.00 |
+| TURNER | 1500.00 |
++--------+---------+
+4 rows in set (0.00 sec)
+
+mysql> SELECT ENAME
+    -> FROM EMP
+    -> WHERE ENAME LIKE ‘S%’;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?S%?' at line 3
+mysql> SELECT ENAME
+    -> FROM EMP
+    -> WHERE ENAME LIKE 'S%';
++-------+
+| ENAME |
++-------+
+| SMITH |
+| SCOTT |
++-------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT ENAME
+    -> FROM EMP
+    -> WHERE ENAME LIKE '%M' ;
+Empty set (0.00 sec)
+
+mysql> SELECT ENAME
+    -> FROM EMP
+    -> WHERE ENAME LIKE '%M' ;
+Empty set (0.00 sec)
+
+mysql> SELECT ENAME
+    -> FROM EMP
+    -> WHERE ENAME LIKE '%S' ;
++-------+
+| ENAME |
++-------+
+| JONES |
+| ADAMS |
+| JAMES |
++-------+
+3 rows in set (0.00 sec)
+
+mysql> Select ename
+    -> From emp
+    -> Where ename like '%E%';
++--------+
+| ename  |
++--------+
+| ALLEN  |
+| JONES  |
+| BLAKE  |
+| TURNER |
+| JAMES  |
+| MILLER |
++--------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT ENAME
+    -> FROM EMP
+    -> WHERE ENAME LIKE '__L%';
++--------+
+| ENAME  |
++--------+
+| ALLEN  |
+| MILLER |
++--------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT ENAME
+    -> FROM EMP
+    -> WHERE ENAME LIKE '__L';
+Empty set (0.00 sec)
+
+mysql> SELECT ENAME, SAL
+    -> FROM EMP
+    -> ORDER BY SAL ASC;
++--------+---------+
+| ENAME  | SAL     |
++--------+---------+
+| SMITH  |  800.00 |
+| JAMES  |  950.00 |
+| ADAMS  | 1100.00 |
+| WARD   | 1250.00 |
+| MARTIN | 1250.00 |
+| MILLER | 1300.00 |
+| TURNER | 1500.00 |
+| ALLEN  | 1600.00 |
+| CLARK  | 2450.00 |
+| BLAKE  | 2850.00 |
+| JONES  | 2975.00 |
+| SCOTT  | 3000.00 |
+| FORD   | 3000.00 |
+| KING   | 5000.00 |
++--------+---------+
+14 rows in set (0.02 sec)
+
+mysql> SELECT ENAME, SAL
+    -> FROM EMP
+    -> ORDER BY SAL DESC;
++--------+---------+
+| ENAME  | SAL     |
++--------+---------+
+| KING   | 5000.00 |
+| SCOTT  | 3000.00 |
+| FORD   | 3000.00 |
+| JONES  | 2975.00 |
+| BLAKE  | 2850.00 |
+| CLARK  | 2450.00 |
+| ALLEN  | 1600.00 |
+| TURNER | 1500.00 |
+| MILLER | 1300.00 |
+| WARD   | 1250.00 |
+| MARTIN | 1250.00 |
+| ADAMS  | 1100.00 |
+| JAMES  |  950.00 |
+| SMITH  |  800.00 |
++--------+---------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT ENAME,SAL
+    -> FROM EMP
+    -> ORDER BY ENAME ASC;
++--------+---------+
+| ENAME  | SAL     |
++--------+---------+
+| ADAMS  | 1100.00 |
+| ALLEN  | 1600.00 |
+| BLAKE  | 2850.00 |
+| CLARK  | 2450.00 |
+| FORD   | 3000.00 |
+| JAMES  |  950.00 |
+| JONES  | 2975.00 |
+| KING   | 5000.00 |
+| MARTIN | 1250.00 |
+| MILLER | 1300.00 |
+| SCOTT  | 3000.00 |
+| SMITH  |  800.00 |
+| TURNER | 1500.00 |
+| WARD   | 1250.00 |
++--------+---------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT ename,sal
+    -> FROM emp
+    -> ORDER BY sal DESC
+    -> LIMIT 5;
++-------+---------+
+| ename | sal     |
++-------+---------+
+| KING  | 5000.00 |
+| SCOTT | 3000.00 |
+| FORD  | 3000.00 |
+| JONES | 2975.00 |
+| BLAKE | 2850.00 |
++-------+---------+
+5 rows in set (0.00 sec)
+
+mysql> SELECT ENAME, SAL, SAL+300
+    -> FROM EMP;
++--------+---------+---------+
+| ENAME  | SAL     | SAL+300 |
++--------+---------+---------+
+| SMITH  |  800.00 | 1100.00 |
+| ALLEN  | 1600.00 | 1900.00 |
+| WARD   | 1250.00 | 1550.00 |
+| JONES  | 2975.00 | 3275.00 |
+| MARTIN | 1250.00 | 1550.00 |
+| BLAKE  | 2850.00 | 3150.00 |
+| CLARK  | 2450.00 | 2750.00 |
+| SCOTT  | 3000.00 | 3300.00 |
+| KING   | 5000.00 | 5300.00 |
+| TURNER | 1500.00 | 1800.00 |
+| ADAMS  | 1100.00 | 1400.00 |
+| JAMES  |  950.00 | 1250.00 |
+| FORD   | 3000.00 | 3300.00 |
+| MILLER | 1300.00 | 1600.00 |
++--------+---------+---------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT ENAME, SAL, SAL+300 AS NEW_SALARY
+    -> FROM EMP;
++--------+---------+------------+
+| ENAME  | SAL     | NEW_SALARY |
++--------+---------+------------+
+| SMITH  |  800.00 |    1100.00 |
+| ALLEN  | 1600.00 |    1900.00 |
+| WARD   | 1250.00 |    1550.00 |
+| JONES  | 2975.00 |    3275.00 |
+| MARTIN | 1250.00 |    1550.00 |
+| BLAKE  | 2850.00 |    3150.00 |
+| CLARK  | 2450.00 |    2750.00 |
+| SCOTT  | 3000.00 |    3300.00 |
+| KING   | 5000.00 |    5300.00 |
+| TURNER | 1500.00 |    1800.00 |
+| ADAMS  | 1100.00 |    1400.00 |
+| JAMES  |  950.00 |    1250.00 |
+| FORD   | 3000.00 |    3300.00 |
+| MILLER | 1300.00 |    1600.00 |
++--------+---------+------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT ENAME, SAL, SAL-200 AS UPDATED_SALARY
+    -> FROM EMP;
++--------+---------+----------------+
+| ENAME  | SAL     | UPDATED_SALARY |
++--------+---------+----------------+
+| SMITH  |  800.00 |         600.00 |
+| ALLEN  | 1600.00 |        1400.00 |
+| WARD   | 1250.00 |        1050.00 |
+| JONES  | 2975.00 |        2775.00 |
+| MARTIN | 1250.00 |        1050.00 |
+| BLAKE  | 2850.00 |        2650.00 |
+| CLARK  | 2450.00 |        2250.00 |
+| SCOTT  | 3000.00 |        2800.00 |
+| KING   | 5000.00 |        4800.00 |
+| TURNER | 1500.00 |        1300.00 |
+| ADAMS  | 1100.00 |         900.00 |
+| JAMES  |  950.00 |         750.00 |
+| FORD   | 3000.00 |        2800.00 |
+| MILLER | 1300.00 |        1100.00 |
++--------+---------+----------------+
+14 rows in set (0.00 sec)
+
+mysql> Select ename, sal, sal*0.10 AS BONUS
+    -> From emp;
++--------+---------+----------+
+| ename  | sal     | BONUS    |
++--------+---------+----------+
+| SMITH  |  800.00 |  80.0000 |
+| ALLEN  | 1600.00 | 160.0000 |
+| WARD   | 1250.00 | 125.0000 |
+| JONES  | 2975.00 | 297.5000 |
+| MARTIN | 1250.00 | 125.0000 |
+| BLAKE  | 2850.00 | 285.0000 |
+| CLARK  | 2450.00 | 245.0000 |
+| SCOTT  | 3000.00 | 300.0000 |
+| KING   | 5000.00 | 500.0000 |
+| TURNER | 1500.00 | 150.0000 |
+| ADAMS  | 1100.00 | 110.0000 |
+| JAMES  |  950.00 |  95.0000 |
+| FORD   | 3000.00 | 300.0000 |
+| MILLER | 1300.00 | 130.0000 |
++--------+---------+----------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT ENAME, SAL,SAL/2 AS HALF_SALARY from emp;
++--------+---------+-------------+
+| ENAME  | SAL     | HALF_SALARY |
++--------+---------+-------------+
+| SMITH  |  800.00 |  400.000000 |
+| ALLEN  | 1600.00 |  800.000000 |
+| WARD   | 1250.00 |  625.000000 |
+| JONES  | 2975.00 | 1487.500000 |
+| MARTIN | 1250.00 |  625.000000 |
+| BLAKE  | 2850.00 | 1425.000000 |
+| CLARK  | 2450.00 | 1225.000000 |
+| SCOTT  | 3000.00 | 1500.000000 |
+| KING   | 5000.00 | 2500.000000 |
+| TURNER | 1500.00 |  750.000000 |
+| ADAMS  | 1100.00 |  550.000000 |
+| JAMES  |  950.00 |  475.000000 |
+| FORD   | 3000.00 | 1500.000000 |
+| MILLER | 1300.00 |  650.000000 |
++--------+---------+-------------+
+14 rows in set (0.00 sec)
+
+mysql>

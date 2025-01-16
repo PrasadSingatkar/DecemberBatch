@@ -1,0 +1,66 @@
+1. BETWEEN...AND
+Write a query to find employees who were hired between January 1, 1982, and December 31, 1983, and whose salaries are between 1000 and 3000.
+
+Write a query to find employees hired between February 1, 1981, and March 1, 1981, and display their names, jobs, and salaries, ordered by hire date.
+
+Write a query to find employees whose manager ID is between 7698 and 7839 and who earn a salary between 1000 and 2000.
+
+Write a query to select employees hired between December 1, 1981, and January 31, 1982, and whose commission is between 0 and 500.
+
+Write a query to find employees in department 20 with hire dates between 1981-01-01 and 1981-12-31 and whose salaries are between 1000 and 3000.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+2. IN 
+Write a query to find employees whose job is either 'CLERK', 'MANAGER', or 'SALESMAN', and whose salary is greater than 1000.
+
+Write a query to select employees from departments 10, 20, and 30 whose commission is not NULL.
+
+Write a query to find employees whose manager ID is in (7839, 7698, 7788), and whose job is 'CLERK' or 'ANALYST'.
+
+Write a query to select all employees whose hire date is either 1981-09-08, 1981-02-20, or 1981-12-03 and display their names, jobs, and salaries.
+
+Write a query to display employees whose salary is in (1250, 3000, 1600, 1100) and whose job is 'SALESMAN'.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3. IS NULL
+Write a query to find employees whose commission is NULL and whose salary is greater than 1000.
+
+Write a query to find employees whose manager ID is NULL or whose commission is NULL, and display their names, jobs, and salaries.
+
+Write a query to find employees whose salary is NULL (if any), and order the result by their hire date.
+
+Write a query to find employees whose commission is NULL and were hired after January 1, 1982.
+
+Write a query to find employees whose commission is NULL and whose salary is between 1000 and 3000.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+4. LIKE
+Write a query to find employees whose name contains the letter 'A' anywhere in the name, and order the result by their hire date.
+
+Write a query to find employees whose name starts with 'M' and whose job is 'SALESMAN'.
+
+Write a query to find employees whose name ends with 'R', whose job is either 'SALESMAN' or 'MANAGER', and display their salaries.
+
+Write a query to find employees whose name has exactly 6 letters, and display their names, jobs, and salaries.
+
+Write a query to find employees whose name contains the letter 'S' in the second position and display their names, jobs, and hire dates.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+5. ORDER BY 
+Write a query to find employees ordered by their hire date in ascending order, but if two employees have the same hire date, order by their salary in descending order.
+
+Write a query to find employees ordered by their commission in descending order, and then by their job.
+
+Write a query to find employees in department 30, ordered by their job title in ascending order and then by salary in descending order.
+
+Write a query to find employees whose salary is between 1000 and 3000, ordered by their hire date and then by their job in descending order.
+
+Write a query to find employees in departments 10 and 20, ordered by their hire date, and if the hire date is the same, order by their name in ascending order.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+6. LIMIT 
+Write a query to display the top 5 employees with the highest commission who work as a SALESMAN.
+
+Write a query to display the top 3 employees with the earliest hire dates in department 30.
+
+Write a query to find the top 5 employees who have the lowest salary and display their names, jobs, and salaries.
+
+Write a query to display the first 3 employees in terms of salary from department 20, ordered by salary in ascending order.
+
+Write a query to display the bottom 3 employees (by salary) in departments 10 and 20, ordered by salary in descending order.
+

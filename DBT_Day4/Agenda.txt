@@ -1,0 +1,11 @@
+Agenda:
+Quick Recap
+
+BETWEEN.........AND Operator
+IN Operator
+IS NULL Operator
+LIKE Operator
+ORDER BY clause
+LIMIT clause 
+
+Assignment questions
