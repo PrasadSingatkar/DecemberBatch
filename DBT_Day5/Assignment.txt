@@ -1,0 +1,25 @@
+=================================================================================
+DISTINCT Questions:
+--------------------------------------------------------------
+Write a query to display all distinct job titles from the emp table.
+Write a query to display distinct commission (COMM) values that employees earn.
+Write a query to find how many distinct managers (MGR) are present in the emp table.
+Write a query to display distinct combinations of salary (SAL) and commission (COMM).
+Write a query to display distinct department number (DEPTNO) and job title (JOB) combinations.
+=================================================================================
+Aggregate Functions Questions:
+--------------------------------------------------------------
+Write a query to display the total and average salary (SAL) for each job title (JOB).
+Write a query to find the highest salary (SAL) among employees who have non-null commission (COMM).
+Write a query to count the number of employees earning more than the average salary.
+Write a query to calculate the total salary for employees under manager (MGR = 7839).
+Write a query to find the earliest hire date (HIREDATE) for each department.
+=================================================================================
+GROUP BY Questions:
+--------------------------------------------------------------
+Write a query to count the number of employees for each department (DEPTNO) and job (JOB).
+Write a query to calculate the total salary of employees working under each manager (MGR).
+Write a query to display the average salary by job for departments that have more than 3 employees.
+Write a query to find the departments where the maximum salary is greater than 2000.
+Write a query to find the total salary and employee count by manager (MGR).
+=================================================================================
