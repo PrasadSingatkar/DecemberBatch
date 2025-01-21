@@ -1,0 +1,524 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 17
+Server version: 9.0.1 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> use flynaut;
+Database changed
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(20)  | YES  |     | NULL    |       |
+| JOB      | varchar(20)  | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+8 rows in set (0.08 sec)
+
+mysql> SELECT * FROM EMP;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> CREATE TABLE DEPARTMENT (
+    -> DEPTNO INT Primary key,
+    -> DNAME VARCHAR(50)
+    -> );
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> SHOW TABLES;
++-------------------+
+| Tables_in_flynaut |
++-------------------+
+| department        |
+| emp               |
++-------------------+
+2 rows in set (0.01 sec)
+
+mysql> DESC DEPARTMENT;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| DEPTNO | int         | NO   | PRI | NULL    |       |
+| DNAME  | varchar(50) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+2 rows in set (0.01 sec)
+
+mysql> SELECT * FROM EMP;
++-------+--------+-----------+------+------------+---------+---------+--------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO |
++-------+--------+-----------+------+------------+---------+---------+--------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |
++-------+--------+-----------+------+------------+---------+---------+--------+
+14 rows in set (0.00 sec)
+
+mysql> ALTER TABLE EMP ADD BONUS DECIMAL(7,2);
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM EMP;
++-------+--------+-----------+------+------------+---------+---------+--------+-------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | SAL     | COMM    | DEPTNO | BONUS |
++-------+--------+-----------+------+------------+---------+---------+--------+-------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |  NULL |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |  NULL |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |  NULL |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |  NULL |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |  NULL |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |  NULL |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |  NULL |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |  NULL |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |  NULL |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |  NULL |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |  NULL |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |  NULL |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |  NULL |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |  NULL |
++-------+--------+-----------+------+------------+---------+---------+--------+-------+
+14 rows in set (0.00 sec)
+
+mysql> desc emp;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| EMPNO    | int          | NO   | PRI | NULL    |       |
+| ENAME    | varchar(20)  | YES  |     | NULL    |       |
+| JOB      | varchar(20)  | YES  |     | NULL    |       |
+| MGR      | int          | YES  |     | NULL    |       |
+| HIREDATE | date         | YES  |     | NULL    |       |
+| SAL      | decimal(7,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2) | YES  |     | NULL    |       |
+| DEPTNO   | int          | YES  |     | NULL    |       |
+| BONUS    | decimal(7,2) | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> Alter table emp modify sal decimal(10,2);
+Query OK, 14 rows affected (0.06 sec)
+Records: 14  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM EMP;
++-------+--------+-----------+------+------------+---------+---------+--------+-------+
+| EMPNO | ENAME  | JOB       | MGR  | HIREDATE   | sal     | COMM    | DEPTNO | BONUS |
++-------+--------+-----------+------+------------+---------+---------+--------+-------+
+|  7369 | SMITH  | CLERK     | 7902 | 1980-12-17 |  800.00 |    NULL |     20 |  NULL |
+|  7499 | ALLEN  | SALESMAN  | 7698 | 1981-02-20 | 1600.00 |  300.00 |     30 |  NULL |
+|  7521 | WARD   | SALESMAN  | 7698 | 1981-02-22 | 1250.00 |  500.00 |     30 |  NULL |
+|  7566 | JONES  | MANAGER   | 7839 | 1981-04-02 | 2975.00 |    NULL |     20 |  NULL |
+|  7654 | MARTIN | SALESMAN  | 7698 | 1981-09-28 | 1250.00 | 1400.00 |     30 |  NULL |
+|  7698 | BLAKE  | MANAGER   | 7839 | 1981-05-01 | 2850.00 |    NULL |     30 |  NULL |
+|  7782 | CLARK  | MANAGER   | 7839 | 1981-06-09 | 2450.00 |    NULL |     10 |  NULL |
+|  7788 | SCOTT  | ANALYST   | 7566 | 1982-12-09 | 3000.00 |    NULL |     20 |  NULL |
+|  7839 | KING   | PRESIDENT | NULL | 1981-11-17 | 5000.00 |    NULL |     10 |  NULL |
+|  7844 | TURNER | SALESMAN  | 7698 | 1981-09-08 | 1500.00 |    0.00 |     30 |  NULL |
+|  7876 | ADAMS  | CLERK     | 7788 | 1983-01-12 | 1100.00 |    NULL |     20 |  NULL |
+|  7900 | JAMES  | CLERK     | 7698 | 1981-12-03 |  950.00 |    NULL |     30 |  NULL |
+|  7902 | FORD   | ANALYST   | 7566 | 1981-12-03 | 3000.00 |    NULL |     20 |  NULL |
+|  7934 | MILLER | CLERK     | 7782 | 1982-01-23 | 1300.00 |    NULL |     10 |  NULL |
++-------+--------+-----------+------+------------+---------+---------+--------+-------+
+14 rows in set (0.00 sec)
+
+mysql> desc emp;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| EMPNO    | int           | NO   | PRI | NULL    |       |
+| ENAME    | varchar(20)   | YES  |     | NULL    |       |
+| JOB      | varchar(20)   | YES  |     | NULL    |       |
+| MGR      | int           | YES  |     | NULL    |       |
+| HIREDATE | date          | YES  |     | NULL    |       |
+| sal      | decimal(10,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2)  | YES  |     | NULL    |       |
+| DEPTNO   | int           | YES  |     | NULL    |       |
+| BONUS    | decimal(7,2)  | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> ALTER TABLE EMP DROP COLUMN BONUS;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc emp;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| EMPNO    | int           | NO   | PRI | NULL    |       |
+| ENAME    | varchar(20)   | YES  |     | NULL    |       |
+| JOB      | varchar(20)   | YES  |     | NULL    |       |
+| MGR      | int           | YES  |     | NULL    |       |
+| HIREDATE | date          | YES  |     | NULL    |       |
+| sal      | decimal(10,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2)  | YES  |     | NULL    |       |
+| DEPTNO   | int           | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> show databases;
++------------------------+
+| Database               |
++------------------------+
+| decemberbatch          |
+| employee_management_db |
+| flynaut                |
+| hospital               |
+| information_schema     |
+| mall                   |
+| mysql                  |
+| performance_schema     |
+| practice               |
+| sakila                 |
+| school                 |
+| student_db             |
+| student_tracker        |
+| sys                    |
+| world                  |
++------------------------+
+15 rows in set (0.01 sec)
+
+mysql> desc emp;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| EMPNO    | int           | NO   | PRI | NULL    |       |
+| ENAME    | varchar(20)   | YES  |     | NULL    |       |
+| JOB      | varchar(20)   | YES  |     | NULL    |       |
+| MGR      | int           | YES  |     | NULL    |       |
+| HIREDATE | date          | YES  |     | NULL    |       |
+| sal      | decimal(10,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2)  | YES  |     | NULL    |       |
+| DEPTNO   | int           | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> Alter table emp rename to employees;
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_flynaut |
++-------------------+
+| department        |
+| employees         |
++-------------------+
+2 rows in set (0.00 sec)
+
+mysql> RENAME EMP TO EMPLOYEE;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'EMP TO EMPLOYEE' at line 1
+mysql> RENAME table EMP TO EMPLOYEE;
+ERROR 1146 (42S02): Table 'flynaut.emp' doesn't exist
+mysql> use flynaut;
+Database changed
+mysql> RENAME table EMP TO EMPLOYEE;
+ERROR 1146 (42S02): Table 'flynaut.emp' doesn't exist
+mysql> RENAME table EMPloyees TO EMPLOYEE;
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables;
++-------------------+
+| Tables_in_flynaut |
++-------------------+
+| department        |
+| employee          |
++-------------------+
+2 rows in set (0.00 sec)
+
+mysql> ALTER TABLE emp RENAME COLUMN ename TO empname;
+ERROR 1146 (42S02): Table 'flynaut.emp' doesn't exist
+mysql> ALTER TABLE employee RENAME COLUMN ename TO empname;
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc employee;
++----------+---------------+------+-----+---------+-------+
+| Field    | Type          | Null | Key | Default | Extra |
++----------+---------------+------+-----+---------+-------+
+| EMPNO    | int           | NO   | PRI | NULL    |       |
+| empname  | varchar(20)   | YES  |     | NULL    |       |
+| JOB      | varchar(20)   | YES  |     | NULL    |       |
+| MGR      | int           | YES  |     | NULL    |       |
+| HIREDATE | date          | YES  |     | NULL    |       |
+| sal      | decimal(10,2) | YES  |     | NULL    |       |
+| COMM     | decimal(7,2)  | YES  |     | NULL    |       |
+| DEPTNO   | int           | YES  |     | NULL    |       |
++----------+---------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> select sqrt(16);
++----------+
+| sqrt(16) |
++----------+
+|        4 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> Select abs(-5);
++---------+
+| abs(-5) |
++---------+
+|       5 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> Select round(123.4567,2);
++-------------------+
+| round(123.4567,2) |
++-------------------+
+|            123.46 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT truncate(123.4567,2);
++----------------------+
+| truncate(123.4567,2) |
++----------------------+
+|               123.45 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> Select ceil(12.3);
++------------+
+| ceil(12.3) |
++------------+
+|         13 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> Select floor(12.8);
++-------------+
+| floor(12.8) |
++-------------+
+|          12 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> Select floor(12.0);
++-------------+
+| floor(12.0) |
++-------------+
+|          12 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> Select ceil(12.0);
++------------+
+| ceil(12.0) |
++------------+
+|         12 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> Select ascii('A');
++------------+
+| ascii('A') |
++------------+
+|         65 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> Select ascii('Hello');
++----------------+
+| ascii('Hello') |
++----------------+
+|             72 |
++----------------+
+1 row in set (0.00 sec)
+
+mysql> Select substr(‘database’,2,4);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?database?,2,4)' at line 1
+mysql>
+mysql> Select substr('database',2,4);
++------------------------+
+| substr('database',2,4) |
++------------------------+
+| atab                   |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> Select substr('Hello',1,2);
++---------------------+
+| substr('Hello',1,2) |
++---------------------+
+| He                  |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> Select concat('Hello','TEAM');
++------------------------+
+| concat('Hello','TEAM') |
++------------------------+
+| HelloTEAM              |
++------------------------+
+1 row in set (0.00 sec)
+
+mysql> USE FLYNAUT;
+Database changed
+mysql> SELECT CONCAT('NAME: ',EMPNAME) FROM EMP;
+ERROR 1146 (42S02): Table 'flynaut.emp' doesn't exist
+mysql> SELECT CONCAT('NAME: ',EMPNAME) FROM EMPLOYEE;
++--------------------------+
+| CONCAT('NAME: ',EMPNAME) |
++--------------------------+
+| NAME: SMITH              |
+| NAME: ALLEN              |
+| NAME: WARD               |
+| NAME: JONES              |
+| NAME: MARTIN             |
+| NAME: BLAKE              |
+| NAME: CLARK              |
+| NAME: SCOTT              |
+| NAME: KING               |
+| NAME: TURNER             |
+| NAME: ADAMS              |
+| NAME: JAMES              |
+| NAME: FORD               |
+| NAME: MILLER             |
++--------------------------+
+14 rows in set (0.00 sec)
+
+mysql> SELECT LOWER('FLYNAUT');
++------------------+
+| LOWER('FLYNAUT') |
++------------------+
+| flynaut          |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT UPPER('FlYnAuT');
++------------------+
+| UPPER('FlYnAuT') |
++------------------+
+| FLYNAUT          |
++------------------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> Select instr('Database', 'base');
++---------------------------+
+| instr('Database', 'base') |
++---------------------------+
+|                         5 |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> Select trim('      Hello      ');
++---------------------------+
+| trim('      Hello      ') |
++---------------------------+
+| Hello                     |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT lpad('Hello',8,'*');
++---------------------+
+| lpad('Hello',8,'*') |
++---------------------+
+| ***Hello            |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT lpad('Hello',8,'@');
++---------------------+
+| lpad('Hello',8,'@') |
++---------------------+
+| @@@Hello            |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT rpad('Hello',8,'@');
++---------------------+
+| rpad('Hello',8,'@') |
++---------------------+
+| Hello@@@            |
++---------------------+
+1 row in set (0.00 sec)
+
+mysql> select length('Flynaut');
++-------------------+
+| length('Flynaut') |
++-------------------+
+|                 7 |
++-------------------+
+1 row in set (0.00 sec)
+
+mysql> Select format(12345.6789);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 1
+mysql> Select format(12345.6789,2);
++----------------------+
+| format(12345.6789,2) |
++----------------------+
+| 12,345.68            |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> Select format(12345.6789,3);
++----------------------+
+| format(12345.6789,3) |
++----------------------+
+| 12,345.679           |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT concat(Empname, ' is a ', JOB) FROM EMPloyee;
++--------------------------------+
+| concat(Empname, ' is a ', JOB) |
++--------------------------------+
+| SMITH is a CLERK               |
+| ALLEN is a SALESMAN            |
+| WARD is a SALESMAN             |
+| JONES is a MANAGER             |
+| MARTIN is a SALESMAN           |
+| BLAKE is a MANAGER             |
+| CLARK is a MANAGER             |
+| SCOTT is a ANALYST             |
+| KING is a PRESIDENT            |
+| TURNER is a SALESMAN           |
+| ADAMS is a CLERK               |
+| JAMES is a CLERK               |
+| FORD is a ANALYST              |
+| MILLER is a CLERK              |
++--------------------------------+
+14 rows in set (0.00 sec)
+
+mysql>

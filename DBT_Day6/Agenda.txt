@@ -1,0 +1,10 @@
+Agenda
+- D4 Assignment
+- DDL 
+- Single Row Functions
+
+
+- Subquery*
+~Find employees who earn more than the average salary
+~Find employees who work in the same department as employee "ALLEN"
+~Get all employees who joined after JONES
