@@ -1,10 +1,37 @@
 Agenda
-- D4 Assignment
+- D4 Assignment   
 - DDL 
 - Single Row Functions
 
 
 - Subquery*
 ~Find employees who earn more than the average salary
+select * from employee
+where salary > (select avg(sal) from employee);
+
 ~Find employees who work in the same department as employee "ALLEN"
+select * from employee
+where deptno = (select deptno from employee where empname = 'ALLEN');
+
+select * from employee
+where deptno = 30;
+
 ~Get all employees who joined after JONES
+Select * from employee
+where hiredate > (select hiredate from employee where empname='JONES');
+
+Select ascii('Hello');
+
+Select substr('database',2,4);
+	Select substr('Hello',1,2);
+
+Select concat('Hello','TEAM');
+SELECT LOWER('FLYNAUT');
+SELECT UPPER('FlYnAuT');
+
+Select instr('Database', 'base');
+
+Ex. Select trim('      Hello      ');
+
+
+Ex. SELECT rpad('Hello',8,'@');

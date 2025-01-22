@@ -2,7 +2,11 @@ ACID Properties*
 SQL datatypes
 Types of SQL Commands
 Constraints
-SELECT Command
 Operators
 Creating database -> table -> inserting values in table
+SELECT Command
 Where clause
+
+SELECT EName, Job FROM Emp where Job ='Manager';
+
+SELECT ename, job, sal from emp where deptno = 30;

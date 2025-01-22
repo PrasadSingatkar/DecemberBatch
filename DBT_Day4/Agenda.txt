@@ -9,3 +9,33 @@ ORDER BY clause
 LIMIT clause 
 
 Assignment questions
+Arithmetic Operator Examples
+
+SELECT ename, hiredate
+FROM EMP
+WHERE HIREDATE BETWEEN '1981-04-01' AND '1981-05-01';
+
+SELECT ENAME, JOB
+FROM EMP
+WHERE JOB='MANAGER' OR JOB = 'CLERK';
+
+SELECT ENAME, JOB
+FROM EMP
+WHERE JOB IN ('MANAGER','CLERK');
+
+SELECT ENAME
+FROM EMP
+WHERE ENAME LIKE 'S%';
+
+Select ename 
+From emp
+Where ename like '%E%';
+
+SELECT ENAME 
+FROM EMP
+WHERE ENAME LIKE '__L';
+
+
+
+
+
