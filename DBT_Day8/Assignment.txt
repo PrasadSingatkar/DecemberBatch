@@ -1,0 +1,14 @@
+Convert the HIREDATE column into the format DD-MM-YYYY.
+Calculate how many days have passed since each employee was hired (using the current date).
+Write a query to find employees who were hired in the year 1981.
+Extract the month and day from the HIREDATE of each employee.
+Write a query to display the employee who was most recently hired.
+Write a query to find employees who were hired in the last 6 months from today's date.
+
+
+Find the names and salaries of employees who earn more than 'WARD'.List all employees who were hired after 'JONES'.
+Show the department numbers that have more than 3 employees.
+Find the employees who earn same salary as 'FORD'.
+find the second highest salary in the company.
+List all managers and their subordinates.
+List all employees whose manager earns more than 3000. 
