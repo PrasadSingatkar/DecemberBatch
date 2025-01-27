@@ -1,0 +1,23 @@
+Select trim(empname) || '.' As modified_name
+From employee;
+
+SELECT CONCAT(TRIM(EmpNAME),'.') AS EMP_LIST
+ FROM EMPloyee;
+
+
+Select empname, length(empname) as name length
+From employee;
+
+To create a department table:
+
+create table  dept (
+	DEPTNO INT(2) PRIMARY KEY,
+	DNAME VARCHAR(20),
+	LOC VARCHAR(15)	
+);
+
+- To insert values into table
+INSERT INTO DEPT VALUES(10, 'ACCOUNTING', 'NEW YORK');
+INSERT INTO DEPT VALUES(20, 'RESEARCH', 'DALLAS');
+INSERT INTO DEPT VALUES(30, 'SALES', 'CHICAGO');
+INSERT INTO DEPT VALUES(40, 'OPERATIONS', 'BOSTON');
