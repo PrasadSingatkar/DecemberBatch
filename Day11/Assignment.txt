@@ -1,0 +1,35 @@
+1. Create an ArrayList of integers and perform the following operations:
+         - Add 5 integers to the list.
+         - Insert an integer at the second position.
+         - Remove an integer by its value and by its index.
+         - Find the sum of all elements in the ArrayList.
+
+2. Create an ArrayList to store product names in a shopping cart.
+         - Add 5 product names.
+         - Insert a new product at the beginning.
+         - Remove the product at the last position.
+         - Count and display the number of items in the shopping cart.
+
+3. Create a LinkedList to simulate a queue of customers.
+        - Add 5 customers to the queue.
+        - remove the first customer.
+        - Add a new customer at the end of the queue.
+
+4. Create a LinkedList to hold meeting topics.
+      - Add 4 topics to the list.
+      - Add a new topic at the end.
+      - Remove the topic at the second position.
+      - Display the current agenda topics.
+
+5. Create a Vector to store scores of a student.
+      - Add 6 scores.
+      - Update the score at the third position.
+        
+6. Create a Vector to store integers.
+      - Add 5 numbers to the Vector.
+      - Print all the elements in the Vector.
+
+7. Create a Vector to store test scores.
+      - Add 5 scores to the Vector.
+      - Update the score at index 2 to a new value.
+      - Print all scores to see the changes.

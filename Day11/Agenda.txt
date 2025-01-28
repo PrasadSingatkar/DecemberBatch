@@ -1,0 +1,7 @@
+Agenda:
+~ Collection Framework Overview
+~ List Interface
+~ List Implementations
+		- ArrayList
+		- LinkedList
+		- Vector
