@@ -1,0 +1,20 @@
+Agenda:
+~ Quick Revision 
+~ Stack
+~ Capacity
+~ ArrayList Vs Vector (Speed)
+~ Set 
+
+
+ArrayList : 
+Up to JDK 6 the the capacity grow with formula newCapacity = (oldCapacity * 3/2) + 1
+
+newCapacity = (10*3/2 )+1
+newCapacity = 16
+===========================================================================
+In JDK 7 and above the formula changes to newCapacity = oldCapacity + (oldCapacity >> 1)
+newCapacity = 10 + (10 >> 1)
+newCapacity = 10 + 5 = 15
+
+1010 =>10
+0101 => 5

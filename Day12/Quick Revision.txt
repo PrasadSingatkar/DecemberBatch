@@ -1,0 +1,73 @@
+Quick Revision:
+CF- architecture for storing and manipulating group of objects.
+
+Collection Interface: Root interface which provides a common structure for all collection classes.
+List Interface: Represents ordered collection and also allows duplicates.
+Set Interface
+Queue Interface
+Map Interface
+
+List Interface:
+Package: java.util.list
+Extends: Collection Interface
+Characteristics: 
+- Stores ordered elements(Sequential)
+- Allows duplicate elements
+
+Common Methods of list interface:
+add(), get(), set(), remove(),size(), isEmpty()
+
+Implementations of LI:
+
+1. ArrayList
+Package: java.util.arraylist
+~ Features:
+uses dynamic array internally
+Fast for accessing elements
+slow for insertions and deletion in the middle.
+~ When to use
+When frequent read operations are needed
+If insertions/deletions are few
+
+2. LinkedList
+Package: java.util.LinkedList
+~Features:
+implements doubly-linked list internally
+Efficient for insertions and deletions
+slower access by index
+~When to use:
+When frequent insertions and deletions are required
+
+3.Vector
+Package: java.util.Vector
+~Features
+Uses dynamic array like arraylist
+thread-safe because its all methods are synchronized
+slower than the arraylist because of synchronization.
+vector class implements a growable array
+~ When to use 
+When multiple threads needs to access the list concorrently(BookMyShow)
+
+4. Stack
+Package: java.util.stack
+Features:
+•	A subclass of vector
+•	Follows LIFO (Last In First Out) principle
+Methods:
+Push(): adds an element to the top
+Pop() : Removes and returns the top element
+Peek(): Returns the top element without removing it
+Empty(): Checks the stack is empty.
+When to use: When we need LIFO behaviour(eg. Undo operatios, browser history)
+
+
+
+
+
+
+
+
+
+
+
+
