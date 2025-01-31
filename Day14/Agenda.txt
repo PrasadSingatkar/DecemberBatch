@@ -1,0 +1,3 @@
+Agenda:
+~ Student Management System (CRUD)
+~ TreeSet & PriorityQueue
