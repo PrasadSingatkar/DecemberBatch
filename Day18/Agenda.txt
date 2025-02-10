@@ -1,0 +1,3 @@
+Agenda:
+Comparable & Comparator
+Basics of threads
