@@ -1,0 +1,5 @@
+Agenda:
+1. SB Without IDE 
+2. Field Injection
+3. Hibernate/JPA Overview
+4. REST
