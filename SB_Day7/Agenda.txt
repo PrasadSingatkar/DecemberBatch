@@ -1,0 +1,11 @@
+Agenda:
+- Demo Project
+- What are REST services?
+- JSON
+- HTTP Methods
+- HTTP Request Message
+- HTTP Response Message
+- HTTP Response ->  Status Codes
+- Client Tool -> PostMan
+- Web Browser Vs PostMan
+ 
