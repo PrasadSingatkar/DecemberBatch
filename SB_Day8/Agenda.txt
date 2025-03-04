@@ -1,0 +1,4 @@
+Agenda:
+`to return a list
+`SpringBoot REST Path Variables
+`SpringBoot REST Exception Handling
